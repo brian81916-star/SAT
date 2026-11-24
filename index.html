@@ -46,10 +46,6 @@ input{min-width:0;width:100%}.bar b{min-width:0}
 <h1>民航局安全保證小組（SAT）資訊總覽</h1>
 <p class="mute">資料來源：W:\1_SAT季會紀錄 下 114年第1季～115年第3季 之奉核／函版／發文版會議紀錄「列管事項彙整表」（整理日 115/11/24）</p>
 
-<h2>近兩年會議一覽</h2>
-<table><thead><tr><th>季別</th><th>幹事會議</th><th>季會日期</th><th>紀錄</th><th>列管事項數</th></tr></thead><tbody id="mt"></tbody></table>
-<p class="mute">幹事會議日期依 W:\2_SAT幹事會議 各季資料夾名稱整理。115年第4季：第1次幹事會議已於 115/11/23 召開，季會尚未召開。<br>下次（115年第4季）新增報告：航站管理組報告鳥擊防制與統計分析。</p>
-
 <h2>列管事項（114年第1季～115年第3季）</h2>
 <div class="card">
 <div class="bar"><b>季別</b><span id="fq"></span></div>
@@ -602,7 +598,6 @@ function draw(){
  const r=D.filter(d=>(q=="全部"||d[0]==q)&&(u=="全部"||d[2].includes(u))&&(s=="全部"||d[4]==s)&&(!k||d.join(" ").includes(k)));
  document.getElementById("cnt").textContent=`共 ${r.length} 筆`;
  document.getElementById("tb").innerHTML=r.map(d=>`<tr><td style="white-space:nowrap">${lab(d[0])}</td><td>${d[1]}</td><td>${d[2]}</td><td>${d[3]}</td><td><span class="tag ${d[4]}">${d[4]}</span></td></tr>`).join("");}
-document.getElementById("mt").innerHTML=M.map(m=>`<tr><td>${lab(m[0])}</td><td>${m[3].replace(/、/g,"<br>")}</td><td>${m[1]}</td><td>${m[2]}</td><td>${D.filter(d=>d[0]==m[0]).length}</td></tr>`).join("");
 document.getElementById("kw").oninput=e=>{k=e.target.value.trim();draw()};
 draw();
 </script>
